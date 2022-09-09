@@ -56,7 +56,7 @@ public class Jpa_Context {
             // commit 되기전에 DB 에 쿼리를 보내게 됨.
 //            Member memberF = new Member(300L, "Flush-test");
 //            em.persist(memberF);
-//            em.flush(); // 즉시 쿼리 실행. 
+//            em.flush(); // 즉시 쿼리 실행.
 
 
             tx.commit();
