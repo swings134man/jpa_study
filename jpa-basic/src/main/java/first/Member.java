@@ -14,6 +14,16 @@ public class Member {
     @Column(name = "name")
     private String name;
 
+    // 기본 생성자
+    public Member() {
+    }
+
+    // 생성자 overroading --> 객체 생성시 변수로 저장하게 하기 위함.
+    public Member(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public Long getId() {
         return id;
     }
