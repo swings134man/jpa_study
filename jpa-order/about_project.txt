@@ -1,0 +1,10 @@
+project- name : jpa-order
+Groupid : jpabook
+ArtifactId : jpabook
+maven 
+java-11 
+
+회원- 주문의 관계 
+주문- 상품 관계
+
+에 대한 jpa 예제 프로젝트 (java_main 사용)
