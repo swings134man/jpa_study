@@ -4,7 +4,10 @@ ArtifactId : jpabook
 maven 
 java-11 
 
+DB  : h2 jdbc:h2:tcp://localhost/~/jpashop
+
 회원- 주문의 관계 
 주문- 상품 관계
 
 에 대한 jpa 예제 프로젝트 (java_main 사용)
+
