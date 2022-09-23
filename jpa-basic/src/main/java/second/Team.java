@@ -1,9 +1,8 @@
 package second;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /************
 * @info : 연관관계 매핑을 위한 Team Entity Class
@@ -20,6 +19,9 @@ public class Team {
     private Long id;
     private String name;
 
+    @OneToMany(mappedBy = "team") // 1:N 관계에서 어떤것이랑 연결이 되어있는지 -> TMember의 객체 변수명인 "team"
+    private List<TMember> members = new ArrayList<>(); // 어레이리스트로 초기화 하면 add 할때 npe가 발생하지 않음.
+
 
     public Long getId() {
         return id;
@@ -35,5 +37,13 @@ public class Team {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<TMember> getMembers() {
+        return members;
+    }
+
+    public void setMembers(List<TMember> members) {
+        this.members = members;
     }
 }

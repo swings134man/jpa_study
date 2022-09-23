@@ -27,6 +27,7 @@ public class TMember {
     // jpa 에게 연관관계를 알려줘야함 -> 1:N , N:1 어떤건지
     // member 입장에서는 N , Team 입장에선 1, 하나의 팀에는 여러명의 선수가 존재하기 때문
     // 관계를 알려줬으면 외래키로 등록해야하는 컬럼은 뭔지 -> @JoinColumn
+    // 연관관계의 주인 -> 양방향 관계의 주인임.
     @ManyToOne
     @JoinColumn(name = "TEAM_ID") //Team 테이블의 PK인 TEAM_ID와 매핑이 됨.
     private Team team;
