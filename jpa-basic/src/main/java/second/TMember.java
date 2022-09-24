@@ -55,7 +55,9 @@ public class TMember {
         return team;
     }
 
-    public void setTeam(Team team) {
+    // SET -> 연관관계 편의 메서드 -> 로직이 들어가 있는 set 은 이름 변경하여 관리 .
+    public void changeTeam(Team team) {
         this.team = team;
+        team.getMembers().add(this); // this 는 TMember 객체 자체. JPA 값 세팅시 역방향 관계의 값을 세팅을 자동으로 해줌.
     }
 }

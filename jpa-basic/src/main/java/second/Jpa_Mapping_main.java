@@ -48,12 +48,14 @@ public class Jpa_Mapping_main {
 //            TMember member = new TMember();
 //            member.setName("member1");
 //            member.setAge(11);
-//            member.setTeam(team);
+//            member.changeTeam(team);
 //            em.persist(member);
 //
 //            // 양방향 관계
 //            // 주인과 역방향 모두 세팅 해줘야함. -> 주인은 member.setTeam(team);
-//            team.getMembers().add(member); // 역방향 Data Setting
+
+              // 연관관계 편의 메서드를 사용하면 아래의 로직이 필요없음. -> TMember의 changeMember 메서드 참고 .
+//            //team.getMembers().add(member); // 역방향 Data Setting
 //
 //            Team findTeam = em.find(Team.class, team.getId()); // 1차 캐시
 //            List<TMember> members = findTeam.getMembers();

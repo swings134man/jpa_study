@@ -22,7 +22,7 @@ public class Team {
     @OneToMany(mappedBy = "team") // 1:N 관계에서 어떤것이랑 연결이 되어있는지 -> TMember의 객체 변수명인 "team"
     private List<TMember> members = new ArrayList<>(); // 어레이리스트로 초기화 하면 add 할때 npe가 발생하지 않음.
 
-
+    // 생성자.
     public Long getId() {
         return id;
     }
@@ -46,4 +46,5 @@ public class Team {
     public void setMembers(List<TMember> members) {
         this.members = members;
     }
+
 }
