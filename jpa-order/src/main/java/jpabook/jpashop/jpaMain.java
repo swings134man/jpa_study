@@ -21,9 +21,12 @@ public class jpaMain {
         // Transaction strart
         try {
 
-            // 예시 코드.ㄴ
+            // 예시 코드 -> 기본 테이블 생성
             Order order = new Order();
             order.addOrderItem(new OrderItem());
+
+            // 추가 공부 -> 실제 테이블에 값 넣어보기. 
+
 
 
             tx.commit();

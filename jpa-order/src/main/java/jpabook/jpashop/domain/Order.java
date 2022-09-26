@@ -18,6 +18,10 @@ public class Order {
     private Member member;
     // 연관관계 매핑 -> order 입장에서 member 는 다대일 관계
 
+    @OneToOne
+    @JoinColumn(name = "DELIVERY_ID")
+    private Delivery delivery; // Delivery 객체와 1:1 관계
+
     @Enumerated(EnumType.STRING) // String 필수조건
     private OrderStatus status; // 주문 상태
 
@@ -25,6 +29,15 @@ public class Order {
     private List<OrderItem> orderItems = new ArrayList<>();
 
     private LocalDateTime orderDate; // 주문시각 -> DB상에선 ORDER_DATE, order_date(DB에 기본 생성형식) 형식임.
+
+
+
+
+
+
+
+
+
     //    @Column(name = "MEMBER_ID")
 //    private Long memberId; // 누가 주문했는지 확인해야하기 떄문.
 

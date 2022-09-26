@@ -29,7 +29,7 @@ public class Jpa_Orm_main {
             TMember member = new TMember();
             member.setName("member1");
             member.setAge(10);
-            member.setTeam(team); // Team 에서 pk 값을 꺼내서 insert 할때 FK 값으로 사용한다
+            member.changeTeam(team); // Team 에서 pk 값을 꺼내서 insert 할때 FK 값으로 사용한다 -> 편의 메서드 사용 Member.changeTeam
             em.persist(member);
 
             // find 조회 쿼리 확인하고 싶은데
@@ -47,7 +47,7 @@ public class Jpa_Orm_main {
 
 
             //조회
-            //TMember findMember = em.find(TMember.class, member.getId());
+            TMember findMember = em.find(TMember.class, member.getId());
 
             // 2번 예제
 //            Team findteam = findMember.getTeam();
