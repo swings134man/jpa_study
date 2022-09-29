@@ -1,22 +1,19 @@
-package third_inheritance;
+package jpabook.jpashop.domain;
 
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 /************
-* @info : 상속관계 매핑 - Item 클래스 extends 한 Movie class
+* @info : Item 테이블(객체)의 하위 객체 - 상속관계 매핑
 * @name : Movie
-* @date : 2022/09/28 5:59 PM
+* @date : 2022/09/29 5:07 PM
 * @author : SeokJun Kang(swings134@gmail.com)
 * @version : 1.0.0
 ************/
 @Entity
-@DiscriminatorValue("M")
 public class Movie extends Item{
+
     private String director;
     private String actor;
-
-    //get set
 
     public String getDirector() {
         return director;

@@ -1,22 +1,19 @@
-package third_inheritance;
+package jpabook.jpashop.domain;
 
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 /************
-* @info : 상속관계 매핑 - Item 클래스 extends 한 Album class
+* @info : Item 테이블(객체)의 하위 객체 - 상속관계 매핑
 * @name : Album
-* @date : 2022/09/28 5:58 PM
+* @date : 2022/09/29 5:04 PM
 * @author : SeokJun Kang(swings134@gmail.com)
 * @version : 1.0.0
 ************/
 @Entity
-@DiscriminatorValue("A")
 public class Album extends Item{
 
     private String artist;
-
-    //get set
+    private String etc;
 
     public String getArtist() {
         return artist;
@@ -24,5 +21,13 @@ public class Album extends Item{
 
     public void setArtist(String artist) {
         this.artist = artist;
+    }
+
+    public String getEtc() {
+        return etc;
+    }
+
+    public void setEtc(String etc) {
+        this.etc = etc;
     }
 }

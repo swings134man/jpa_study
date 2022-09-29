@@ -1,23 +1,18 @@
-package third_inheritance;
+package jpabook.jpashop.domain;
 
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-
 /************
-* @info : 상속관계 매핑 - Item 클래스 extends 한 Book class
+* @info : Item 테이블(객체)의 하위 객체 - 상속관계 매핑
 * @name : Book
-* @date : 2022/09/28 6:00 PM
+* @date : 2022/09/29 5:06 PM
 * @author : SeokJun Kang(swings134@gmail.com)
 * @version : 1.0.0
 ************/
+
 @Entity
-@DiscriminatorValue("B")
 public class Book extends Item{
-
     private String author;
-    private String isbn; //번호
-
-    //get set
+    private String isbn;
 
     public String getAuthor() {
         return author;

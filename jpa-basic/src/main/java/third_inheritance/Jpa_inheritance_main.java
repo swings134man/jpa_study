@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import java.time.LocalDateTime;
 
 public class Jpa_inheritance_main {
     public static void main(String[] args) {
@@ -25,6 +26,10 @@ public class Jpa_inheritance_main {
             movie.setActor("Tony Stark");
             movie.setName("아이언맨");
             movie.setPrice(10000);
+
+            // base Entity
+            movie.setCreatedBy("kang");
+            movie.setCreatedDate(LocalDateTime.now());
             em.persist(movie);
 
 

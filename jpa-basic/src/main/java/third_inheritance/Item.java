@@ -11,8 +11,9 @@ import javax.persistence.*;
 * @version : 1.0.0
 ************/
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-public class Item {
+@Inheritance(strategy = InheritanceType.JOINED) // 이부분만 변경시 join, 단일, 각테이블 전략으로 변경 가능.
+@DiscriminatorColumn
+public class Item extends BaseEntity{
 
     @Id @GeneratedValue
     private Long id;
