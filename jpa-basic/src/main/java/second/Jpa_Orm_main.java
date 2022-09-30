@@ -47,7 +47,7 @@ public class Jpa_Orm_main {
 
 
             //조회
-            TMember findMember = em.find(TMember.class, member.getId());
+//            TMember findMember = em.find(TMember.class, member.getId());
 
             // 2번 예제
 //            Team findteam = findMember.getTeam();
