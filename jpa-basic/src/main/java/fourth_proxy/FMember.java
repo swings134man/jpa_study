@@ -19,7 +19,7 @@ public class FMember {
     @Column(name = "USER_NAME")
     private String name;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY) // 지연로딩 LAZY -> 아래의 team을 프록시 객체로 조회함 -> member class만 조회함
     @JoinColumn(name = "TEAM_ID")
     private FTeam team;
 
