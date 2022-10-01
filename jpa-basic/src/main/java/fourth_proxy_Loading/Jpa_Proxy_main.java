@@ -1,6 +1,4 @@
-package fourth_proxy;
-
-import third_inheritance.Movie;
+package fourth_proxy_Loading;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -29,27 +27,27 @@ public class Jpa_Proxy_main {
         try {
 
             // Proxy 객체
-            FMember member = new FMember();
-            member.setName("prprpr");
-            em.persist(member);
+//            FMember member = new FMember();
+//            member.setName("prprpr");
+//            em.persist(member);
+//
+//            em.flush();
+//            em.clear();
 
-            em.flush();
-            em.clear();
-
-            System.out.println("=========BEFORE=========");
+//            System.out.println("=========BEFORE=========");
 
             // 실제 값 조회가 이루어지기 전까진 쿼리 X
-            FMember ref = em.getReference(FMember.class, 1L); //Proxy 객체 - 초기화 전
-            System.out.println("=========AFTER=========");
+//            FMember ref = em.getReference(FMember.class, 1L); //Proxy 객체 - 초기화 전
+//            System.out.println("=========AFTER=========");
 
-            System.out.println("userName = " + ref.getName()); // 프록시 초기화 -> 값이 없는것을 조회하니까
-            System.out.println("Proxy : " + ref.getClass()); // 프록시 객체 확인 -> Proxy : class fourth_proxy.FMember$HibernateProxy$aIH7aauQ
-            System.out.println("Proxy 객체 확인2 : " +  emf.getPersistenceUnitUtil()); // 프록시 객체 확인 2번째 방법
+//            System.out.println("userName = " + ref.getName()); // 프록시 초기화 -> 값이 없는것을 조회하니까
+//            System.out.println("Proxy : " + ref.getClass()); // 프록시 객체 확인 -> Proxy : class fourth_proxy.FMember$HibernateProxy$aIH7aauQ
+//            System.out.println("Proxy 객체 확인2 : " +  emf.getPersistenceUnitUtil()); // 프록시 객체 확인 2번째 방법
 
             // 객체 보장원칙
-            FMember findMember = em.find(FMember.class, 1L); // 실제 객체
-            System.out.println(findMember.getClass()); //
-            System.out.println("proxty == Entity : " + (ref.getClass() == findMember.getClass())); // true
+//            FMember findMember = em.find(FMember.class, 1L); // 실제 객체
+//            System.out.println(findMember.getClass()); //
+//            System.out.println("proxty == Entity : " + (ref.getClass() == findMember.getClass())); // true
             // 실제 객체 -> em.find 먼저 실행 후
             // Proxy 객체 -> em.getRefernce 실행하면 프록시 객체가 아닌 실제 Entity가 반환됨.
 

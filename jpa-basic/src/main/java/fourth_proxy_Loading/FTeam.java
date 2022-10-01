@@ -1,4 +1,4 @@
-package fourth_proxy;
+package fourth_proxy_Loading;
 
 import javax.persistence.*;
 import java.util.ArrayList;
