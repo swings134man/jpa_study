@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import static javax.persistence.FetchType.LAZY;
+
 @Entity
 @Table(name = "ORDERS") //DB에서는 order가 예약어일 경우가 있음.
 public class Order extends BaseEntity{
@@ -13,12 +15,12 @@ public class Order extends BaseEntity{
     @Column(name = "ORDER_ID")
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "MEMBER_ID")
     private Member member;
     // 연관관계 매핑 -> order 입장에서 member 는 다대일 관계
 
-    @OneToOne
+    @OneToOne(fetch = LAZY)
     @JoinColumn(name = "DELIVERY_ID")
     private Delivery delivery; // Delivery 객체와 1:1 관계
 
