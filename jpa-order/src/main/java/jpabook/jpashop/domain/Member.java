@@ -19,6 +19,16 @@ public class Member extends BaseEntity{
     @OneToMany(mappedBy = "member") // 양방향 member객체에게 권한 위임.
     private List<Order> orders = new ArrayList<>();
 
+    // 임베디드 타입
+    // 기간 Period
+    // @Embedded 어노테이션은 @Embeddable를 써놨으면 없어도 된다.
+    @Embedded
+    private Period workPeriod;
+
+    // 주소
+    @Embedded
+    private Address homeAddress;
+
 
     public Long getId() {
         return id;
