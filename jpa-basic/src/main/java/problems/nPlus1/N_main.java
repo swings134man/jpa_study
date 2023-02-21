@@ -94,15 +94,13 @@ public class N_main {
 //                System.out.println("member : " + members.getOrders());
 //            }
 
-            // orders 검색 - 9 개 검색 후 출력
-            List<N_orders> resultList =
-                    em.createQuery("select DISTINCT o from N_orders o join fetch o.member"
-                            , N_orders.class)
-                            .getResultList();
-            System.out.println("result size : " + resultList.size());
-//            for (N_orders orders: resultList) {
-//                System.out.println("orders : " + orders.getMember());
-//            }
+
+//            // orders 검색 - 9 개 검색 후 출력
+//            List<N_orders> resultList2 =
+//                    em.createQuery("select DISTINCT o from N_orders o join fetch o.member"
+//                            , N_orders.class)
+//                            .getResultList();
+//            System.out.println("result2 size : " + resultList2.size());
 
 
             tx.commit();
