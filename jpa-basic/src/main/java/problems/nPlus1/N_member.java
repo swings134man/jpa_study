@@ -51,12 +51,12 @@ public class N_member {
         this.orders = orders;
     }
 
-//    @Override
-//    public String toString() {
-//        return "N_member{" +
-//                "id=" + id +
-//                ", userName='" + userName + '\'' +
-//                ", orders=" + orders +
-//                '}';
-//    }
+    @Override
+    public String toString() {
+        return "N_member{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", orders=" + orders +
+                '}';
+    }
 }

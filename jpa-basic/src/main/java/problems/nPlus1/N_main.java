@@ -54,7 +54,8 @@ public class N_main {
 //            List<N_member> resultList =
 //                    em.createQuery("select m from N_member m", N_member.class)
 //                            .getResultList();
-//            System.out.println("member: " + resultList);
+////            System.out.println("member: " + resultList);
+//            resultList.stream().forEach(System.out::println);
 // --------------------------- JPQL 사용시 N+1 발생 ---------------------------
 
         /*
@@ -78,16 +79,30 @@ public class N_main {
 //            }
 // --------------------------- 여기까진 N+1 발생함---------------------------
 
-            // fetch join
-            List<N_member> resultList =
-                    em.createQuery("select m from N_member m join fetch m.orders"
-                            , N_member.class)
-                            .getResultList();
-
-//            for (N_member member: resultList) {
-//                System.out.println("member : " + member.getId());
+            // fetch join - member
+//            List<N_member> resultList =
+//                    em.createQuery("select DISTINCT m from N_member m join fetch m.orders"
+//                            , N_member.class)
+//                            .getResultList();
+//
+////            for (N_member member: resultList) {
+////                System.out.println("member : " + member.getId());
+////            }
+//            System.out.println("member result size: " + resultList.size()); // member 및 member에 연관된 orders
+//
+//            for (N_member members: resultList) {
+//                System.out.println("member : " + members.getOrders());
 //            }
-            System.out.println("size: " + resultList.size());
+
+            // orders 검색 - 9 개 검색 후 출력
+            List<N_orders> resultList =
+                    em.createQuery("select DISTINCT o from N_orders o join fetch o.member"
+                            , N_orders.class)
+                            .getResultList();
+            System.out.println("result size : " + resultList.size());
+//            for (N_orders orders: resultList) {
+//                System.out.println("orders : " + orders.getMember());
+//            }
 
 
             tx.commit();
