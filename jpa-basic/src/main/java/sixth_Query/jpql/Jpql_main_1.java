@@ -101,13 +101,14 @@ public class Jpql_main_1 {
             // package 명을 적어줘야 하는것이 불편한 단점임.
             // QueryDSL 사용 할 경우 package 명 생략 하면서 쉽게 사용가능 -> Java Code로 사용하기 때문이다.
             // 순서와 타입이 일치하는 생성자가 필요하다.
-            List<Jp_memberDTO> resultList =
-                    em.createQuery("select new sixth_Query.jpql.Jp_memberDTO(m.username, m.age) from Jp_member m"
-                            , Jp_memberDTO.class)
-                            .getResultList();
-            Jp_memberDTO jp_memberDTO = resultList.get(0);
-            System.out.println("DTO : " + jp_memberDTO.getUsername());
-            System.out.println("DTO : " + jp_memberDTO.getAge());
+//            List<Jp_memberDTO> resultList =
+//                    em.createQuery("select new sixth_Query.jpql.Jp_memberDTO(m.username, m.age) from Jp_member m"
+//                            , Jp_memberDTO.class)
+//                            .getResultList();
+//            Jp_memberDTO jp_memberDTO = resultList.get(0);
+//            System.out.println("DTO : " + jp_memberDTO.getUsername());
+//            System.out.println("DTO : " + jp_memberDTO.getAge());
+
 
 
             tx.commit();

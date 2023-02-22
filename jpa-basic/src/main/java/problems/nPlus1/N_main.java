@@ -67,6 +67,7 @@ public class N_main {
 //                    em.createQuery("select m from N_member m"
 //                            , N_member.class)
 //                            .getResultList();
+//            System.out.println("res " + resultList.get(0).getOrders());
 //            // 하지만 비지니스 로직에서 사용시 SELECT * FROM ORDERS WHERE MEMBER_ID = ? 쿼리 발생
 //            N_member firstMember = resultList.get(0);
 //            firstMember.getOrders().size();
