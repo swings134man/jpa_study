@@ -18,6 +18,16 @@ public class Jp_Address {
     private String street;
     private String zipcode;
 
+    public Jp_Address() {
+
+    }
+
+    public Jp_Address(String city, String street, String zipcode) {
+        this.city = city;
+        this.street = street;
+        this.zipcode = zipcode;
+    }
+
     public String getCity() {
         return city;
     }

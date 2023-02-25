@@ -14,6 +14,14 @@ public class Jp_product {
     private int price;
     private int stockAmount;
 
+
+    // Method
+    public void minusAmount(int amount) {
+        this.stockAmount = this.stockAmount - amount;
+    }
+
+
+    // Getter/ setter
     public Long getId() {
         return id;
     }
