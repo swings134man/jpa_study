@@ -108,6 +108,12 @@ public class FetchJoin_main_1 {
                 }
             }
 
+            /*
+                join 만 사용하게 되면, 연관된 엔티티를 함께 조회 하지 않는다.
+                select t from Jp_team t join t.members m -> 즉 members를 사용하는 시점에 조회가 일어나서 N+1이 발생한다.
+
+                -> SELECT 절에 지정된 Entity만 조회한다. (JPQL은 결과를 반환할때, 연관관계 고려하지 않음.)
+             */
 
             tx.commit();
         }catch (Exception e){
