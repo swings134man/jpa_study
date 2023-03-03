@@ -54,6 +54,13 @@ public class Jp_member {
         this.age = age;
     }
 
+    public Jp_team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Jp_team team) {
+        this.team = team;
+    }
 
     @Override
     public String toString() {
