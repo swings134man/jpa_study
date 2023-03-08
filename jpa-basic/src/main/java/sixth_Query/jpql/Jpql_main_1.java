@@ -127,12 +127,23 @@ public class Jpql_main_1 {
 //            System.out.println(result);
 
             // 3. 외래키 값. -> ENtity 직접 넣어도 되고, FK 값을 넣어도된다.
-            String query = "select m from Jp_member m where m.team.id = :teamId";
-            List<Jp_member> member = em.createQuery(query, Jp_member.class)
-                    .setParameter("teamId", 15L)
-                    .getResultList();
-            System.out.println(member);
+//            String query = "select m from Jp_member m where m.team.id = :teamId";
+//            List<Jp_member> member = em.createQuery(query, Jp_member.class)
+//                    .setParameter("teamId", 15L)
+//                    .getResultList();
+//            System.out.println(member);
 
+            /*
+                벌크 연산 - INSERT, UPDATE, DELETE 지원
+
+                * 벌크연산 후 영속성 컨텍스트를 초기화 해줘야 한다. -> 벌크연산은 영속성컨텍스트를 무시하고 DB에 직접 쿼리하기 때문.
+                -> em.clear() 후 재조회 -> 재조회 데이터로 사용해야함.
+             */
+
+            // 1. 모든 회원의 나이를 20살로 변경
+            int resultCount = em.createQuery("update Jp_member m set m.age = 20 ")
+                    .executeUpdate();
+            System.out.println(resultCount);
 
 
             tx.commit();
