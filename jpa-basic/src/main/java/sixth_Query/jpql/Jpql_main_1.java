@@ -110,6 +110,30 @@ public class Jpql_main_1 {
 //            System.out.println("DTO : " + jp_memberDTO.getAge());
 
 
+            // Entity 직접 사용
+//            Jp_member member = new Jp_member();
+//            String query1 = "select m from Jp_member m where m = :member";
+//            Jp_member result = em.createQuery(query1, Jp_member.class)
+//                    .setParameter("member", member)
+//                    .getSingleResult();
+//            System.out.println(result);
+
+            // 2. 식별자를 직접 전달 - PK
+            // SQL : select m.* from Jp_member m where m.id = 19
+//            String query1 = "select m from Jp_member m where m.id = :id";
+//            Jp_member result = em.createQuery(query1, Jp_member.class)
+//                    .setParameter("id", 19L)
+//                    .getSingleResult();
+//            System.out.println(result);
+
+            // 3. 외래키 값. -> ENtity 직접 넣어도 되고, FK 값을 넣어도된다.
+            String query = "select m from Jp_member m where m.team.id = :teamId";
+            List<Jp_member> member = em.createQuery(query, Jp_member.class)
+                    .setParameter("teamId", 15L)
+                    .getResultList();
+            System.out.println(member);
+
+
 
             tx.commit();
         }catch (Exception e){
